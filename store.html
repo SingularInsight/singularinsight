@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Store — Singular Insight</title>
+  <meta name="description" content="Singular Insight — data cleanup, dashboards, and simple automations for small teams.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="Singular Insight logo" class="brand-logo" />
+      <span class="brand-name">Singular Insight</span>
+    </a>
+    <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="store.html">Store</a>
+      <a href="faqs.html">FAQs</a>
+    </nav>
+  </div>
+</header>
+<main class="site-main">
+
+<section class="section">
+  <div class="container">
+    <h1>Store</h1>
+    <p class="small">Simple checkout via secure payment links. No account required.</p>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+      <article class="card">
+        <h3>Mini Triage & Roadmap</h3>
+        <p>$99 — 30‑min call + 1‑page plan. Credited to any package started within 7 days.</p>
+        <a class="button primary" href="https://buy.stripe.com/test_123" target="_blank" rel="noopener">Buy for $99</a>
+      </article>
+      <article class="card">
+        <h3>Clean & Merge</h3>
+        <p>$299 — Up to 2 files (≤10k rows). Tidy CSV/XLSX + Data Dictionary.</p>
+        <a class="button primary" href="https://buy.stripe.com/test_456" target="_blank" rel="noopener">Buy for $299</a>
+      </article>
+      <article class="card">
+        <h3>Sales/Donor Dashboard</h3>
+        <p>$649 — KPIs, 12‑month trend, Top 10, simple filters. No macros required.</p>
+        <a class="button primary" href="https://buy.stripe.com/test_789" target="_blank" rel="noopener">Buy for $649</a>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Singular Insight • hello@singularinsight.com • (410) 555‑1212</p>
+    <p class="small">No accounts or logins required. Payments are processed via secure third‑party links.</p>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const btn = document.querySelector('.menu-btn'); const nav = document.querySelector('.nav');
+  btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); nav.classList.toggle('open'); });
+</script>
+</body>
+</html>
