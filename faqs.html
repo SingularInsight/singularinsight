@@ -9,13 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="data/company.js"></script>
+  <script src="data/offerings.js"></script>
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
       <img src="assets/logo.png" alt="Singular Insight logo" class="brand-logo" />
-      <span class="brand-name">Singular Insight</span>
+      <span class="brand-name js-brand-name">Singular Insight</span>
     </a>
     <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <nav class="nav" aria-label="Primary">
@@ -32,33 +34,30 @@
   <div class="container">
     <h1>FAQs & Business Information</h1>
     <details class="card"><summary><strong>How do payments work?</strong></summary>
-      <p>We use secure third‑party payment links (e.g., Stripe). You can pay by card, ACH, or wallet where enabled. For projects over $400, we take 50% upfront and 50% at delivery.</p>
+      <p>We use secure third-party payment links (e.g., Stripe). You can pay by card, ACH, or wallet where enabled. For projects over $400, we take 50% upfront and 50% at delivery.</p>
     </details>
     <details class="card"><summary><strong>Do you require logins or accounts?</strong></summary>
       <p>No. There is no login or signup for our site. We’ll share files via email or a secure link.</p>
     </details>
     <details class="card"><summary><strong>What about taxes?</strong></summary>
-      <p>For Maryland customers, certain IT/data services may be subject to MD service tax and digital downloads may be subject to MD digital product tax. If you’re in another state, we apply that state’s rules. We’ll state taxes transparently on the invoice.</p>
+      <p class="small">For Maryland customers, certain IT/data services may be subject to MD service tax and digital downloads may be subject to MD digital product tax.</p>
     </details>
     <details class="card"><summary><strong>Data privacy (PII/PHI/PCI)?</strong></summary>
       <p>Please avoid uploading sensitive data. We provide a “Data Intake Red Flags” checklist and delete working copies within 14 days of delivery unless ongoing support is requested.</p>
     </details>
     <details class="card"><summary><strong>Refunds & reschedules</strong></summary>
-      <p>Mini Triage ($99) is non‑refundable but credited if you start a package within 7 days. One free reschedule with 24 hours notice.</p>
+      <p>Mini Triage ($99) is non-refundable but credited if you start a package within 7 days. One free reschedule with 24 hours notice.</p>
     </details>
   </div>
 </section>
+
 </main>
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>© <span id="year"></span> Singular Insight • hello@singularinsight.com • (410) 555‑1212</p>
-    <p class="small">No accounts or logins required. Payments are processed via secure third‑party links.</p>
+    <p>© <span class="js-year"></span> <span class="js-brand-name">Singular Insight</span> • <a href="#" class="js-brand-email">hello@singularinsight.com</a> • <span class="js-brand-phone">(410) 555-1212</span></p>
+    <p class="small js-footer-note">No accounts or logins required. Payments are processed via secure third-party links.</p>
   </div>
 </footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const btn = document.querySelector('.menu-btn'); const nav = document.querySelector('.nav');
-  btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); nav.classList.toggle('open'); });
-</script>
+<script src="scripts/site.js"></script>
 </body>
 </html>

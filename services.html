@@ -9,13 +9,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="data/company.js"></script>
+  <script src="data/offerings.js"></script>
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
       <img src="assets/logo.png" alt="Singular Insight logo" class="brand-logo" />
-      <span class="brand-name">Singular Insight</span>
+      <span class="brand-name js-brand-name">Singular Insight</span>
     </a>
     <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <nav class="nav" aria-label="Primary">
@@ -31,21 +33,8 @@
 <section class="section">
   <div class="container">
     <h1>Services</h1>
-    <p class="lead">Flat-fee packages plus on-demand add‑ons. No subscriptions required.</p>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-      <article class="card"><h3>Data Clean‑Up</h3><ul class="list">
-        <li>Deduplicate</li><li>Normalize dates and text</li><li>Standardize categories</li><li>Split/merge columns</li><li>Combine data sets</li>
-      </ul></article>
-      <article class="card"><h3>Insight Dashboards and Reports</h3><ul class="list">
-        <li>Single page reports</li><li>12 month trends + Top 10 highlights</li><li>Simple filters</li><li>PDF exports</li>
-      </ul></article>
-      <article class="card"><h3>Automate and Refresh</h3><ul class="list">
-        <li>Power Query / Sheets formulas</li><li>Validation to prevent errors</li><li>Refresh instructions</li>
-      </ul></article>
-      <article class="card"><h3>Add‑ons</h3><ul class="list">
-        <li>Forecast tab</li><li>PDF report layout</li><li>Form for new rows</li><li>Email summaries</li><li>Formula creation</li>
-      </ul></article>
-    </div>
+    <p class="lead">Flat-fee packages plus on-demand add-ons. No subscriptions required.</p>
+    <div id="services-grid" class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));"></div>
   </div>
 </section>
 <section class="section">
@@ -53,26 +42,18 @@
     <h2>Engagement types</h2>
     <table class="table">
       <thead><tr><th>Type</th><th>When to use</th><th>Typical fee</th></tr></thead>
-      <tbody>
-        <tr><td>Mini Triage & Roadmap</td><td>Unclear scope; want quick plan + quick win</td><td>$99 (credited)</td></tr>
-        <tr><td>Clean & Merge</td><td>Messy exports; need tidy dataset</td><td>$299</td></tr>
-        <tr><td>Dashboard</td><td>Executives need a one‑pager</td><td>$649</td></tr>
-        <tr><td>Monthly Maintenance</td><td>Recurring updates/checks</td><td>$149–$349/mo</td></tr>
-      </tbody>
+      <tbody id="engagements-body"></tbody>
     </table>
   </div>
 </section>
+
 </main>
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>© <span id="year"></span> Singular Insight • hello@singularinsight.com</p>
-    <p class="small">Payments are processed via secure third‑party links.</p>
+    <p>© <span class="js-year"></span> <span class="js-brand-name">Singular Insight</span> • <a href="#" class="js-brand-email">hello@singularinsight.com</a> • <span class="js-brand-phone">(410) 555-1212</span></p>
+    <p class="small js-footer-note">No accounts or logins required. Payments are processed via secure third-party links.</p>
   </div>
 </footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const btn = document.querySelector('.menu-btn'); const nav = document.querySelector('.nav');
-  btn.addEventListener('click', () => { const open = btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!open)); nav.classList.toggle('open'); });
-</script>
+<script src="scripts/site.js"></script>
 </body>
 </html>
