@@ -14,4 +14,4 @@ Pages render from those data files using `scripts/site.js` (vanilla JS).
 - Replace `assets/logo.png` with your logo file.
 
 ## Deploy
-Upload the folder to Netlify, Vercel, GitHub Pages, S3, or any static host.
+Upload
